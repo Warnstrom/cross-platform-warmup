@@ -1,18 +1,22 @@
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-import { CommonStyles } from "../styles/CommonStyles";
-
 export const CountButton = ({ text, submit }) => (
   <TouchableOpacity style={styles.button} onPress={submit}>
-    <Text style={CommonStyles.textItem}>{text}</Text>
+    <Text style={styles.buttonText}>{text}</Text>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 5,
-    margin: 5,
-    backgroundColor: "lightblue",
+    paddingTop: 16,
+    paddingBottom: 16,
+    paddingStart: 26,
+    paddingEnd: 26,
+    borderRadius: 8,
+    backgroundColor: "#3F51B5",
     alignItems: "center",
   },
+  buttonText: {
+    fontSize: 16,
+  }
 });

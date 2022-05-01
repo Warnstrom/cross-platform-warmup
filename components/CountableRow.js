@@ -21,10 +21,14 @@ export const CountableRow = ({ countable, changeCounts, removeCountable, changeC
           <TouchableOpacity
             style={styles.changeTitleIcon}
             onPress={() => {
-              changeCountableName(countable, name);
-              myTextInput.current.clear();
-              Keyboard.dismiss();
-              setChangeInput(false);
+              if (name.length != 0) {
+                changeCountableName(countable, name);
+                myTextInput.current.clear();
+                Keyboard.dismiss();
+                setChangeInput(false);
+              } else {
+                toast("You need to write something before changing title")
+              }
             }}
           >
             <Icon name="check" size={15} color="#fff" />
